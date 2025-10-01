@@ -59,22 +59,7 @@
   </section>
   
 
-  <script>
-    // ... (Todo o código JS existente) ...
-
-    // NOVO: REGISTRO DO SERVICE WORKER (PWA)
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/service-worker.js')
-                .then(registration => {
-                    console.log('SW registrado com sucesso: ', registration);
-                })
-                .catch(registrationError => {
-                    console.log('Falha no registro do SW: ', registrationError);
-                });
-        });
-    }
-</script>
+  
 
   <footer>
     <p>&copy; 2025 MB Tech - Criado por Mylle Braga</p>
