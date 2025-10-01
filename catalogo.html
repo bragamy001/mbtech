@@ -225,10 +225,11 @@
 
         /* --- Botão de Chat Fixo (FAB) --- */
         .chat-fab {
+            /* COR DO FAB MUDOU PARA VERDE WHATSAPP */
             position: fixed;
             bottom: 25px; 
             right: 25px; 
-            background-color: #ff2b2b; 
+            background-color: #25D366; /* Verde WhatsApp */
             color: white;
             border: none;
             width: 60px;
@@ -240,13 +241,13 @@
             font-size: 30px;
             text-decoration: none;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(255, 43, 43, 0.4); 
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4); /* Sombra verde */
             transition: transform 0.3s ease-in-out, background-color 0.3s;
             z-index: 1010; 
         }
 
         .chat-fab:hover {
-            background-color: #ff1a1a; 
+            background-color: #1DA851; /* Verde um pouco mais escuro no hover */
             transform: scale(1.05); 
         }
 
@@ -273,7 +274,8 @@
         }
 
         .chat-header {
-            background-color: #121212; 
+            /* COR DO CABEÇALHO DO CHAT MUDOU PARA VERDE WHATSAPP */
+            background-color: #25D366; /* Verde WhatsApp */
             color: white;
             padding: 15px;
             display: flex;
@@ -283,7 +285,8 @@
         }
 
         .chat-header-icon {
-            color: #ff2b2b;
+            /* Ícone do cabeçalho do chat também verde */
+            color: white; /* Ou um tom mais claro de verde se preferir */
             margin-right: 10px;
         }
 
@@ -333,7 +336,7 @@
             width: 100%;
             padding: 10px;
             margin-bottom: 8px;
-            background-color: #ff2b2b;
+            background-color: #ff2b2b; /* Opções continuam em vermelho */
             color: white;
             border: none;
             border-radius: 6px;
@@ -348,9 +351,70 @@
         }
 
         .whatsapp-link-btn {
-            background-color: #25D366; 
-            /* ... (Estilos mantidos) ... */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: 600;
+            padding: 12px;
+            background-color: #25D366; /* Botão de WhatsApp em verde */
+            text-decoration: none; 
         }
+
+        .whatsapp-link-btn:hover {
+            background-color: #1DA851;
+        }
+
+        .whatsapp-link-btn i {
+            margin-right: 8px;
+        }
+
+        .chat-input-container {
+            padding: 10px;
+            border-top: 1px solid #333;
+            background-color: #1f1f1f;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .chat-input-container.hidden {
+            display: none;
+        }
+
+        .chat-input-container input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #444;
+            border-radius: 6px;
+            margin-right: 5px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s;
+            background-color: #121212;
+            color: #fff;
+        }
+
+        .chat-input-container input:focus {
+            border-color: #ff2b2b;
+        }
+
+        .chat-input-container button {
+            background-color: #ff2b2b; 
+            color: white;
+            border: none;
+            padding: 10px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            height: 40px;
+        }
+
+        .chat-input-container button:hover {
+            background-color: #ff1a1a;
+        }
+
 
         /* --- OTIMIZAÇÃO MOBILE (Telas de até 600px de largura) --- */
         @media (max-width: 600px) {
@@ -361,7 +425,6 @@
             }
             
             .header-content {
-                /* Usamos space-between para separar o logo do botão Voltar */
                 justify-content: space-between;
             }
             
@@ -376,7 +439,7 @@
             .back-link {
                 padding: 6px 10px;
                 font-size: 14px;
-                margin-left: 10px; /* Adiciona uma margem para o título */
+                margin-left: 10px; 
             }
 
             main {
@@ -392,13 +455,12 @@
             /* --- TABELA RESPONSIVA (Mobile-First Table) --- */
             table {
                 display: block;
-                overflow-x: hidden; /* Oculta a barra de rolagem horizontal */
+                overflow-x: hidden; 
                 border-radius: 0;
                 box-shadow: none;
             }
 
             thead {
-                /* Esconde o cabeçalho original */
                 display: none;
             }
 
@@ -407,7 +469,6 @@
             }
 
             tr {
-                /* Transforma a linha em um "cartão" */
                 display: block;
                 margin-bottom: 15px;
                 border: 1px solid #333;
@@ -417,10 +478,9 @@
             }
 
             td {
-                /* Cada célula vira uma linha vertical */
                 display: block;
                 text-align: right;
-                padding-left: 50%; /* Espaço para o rótulo */
+                padding-left: 50%; 
                 position: relative;
                 border-bottom: 1px solid #333;
                 font-size: 14px;
@@ -431,7 +491,6 @@
             }
 
             td:before {
-                /* Rótulos para identificar o dado */
                 content: attr(data-label);
                 position: absolute;
                 left: 15px;
@@ -454,7 +513,7 @@
                 width: calc(100% - 30px); 
                 right: 15px;
                 bottom: 75px;
-                max-height: 75vh; /* Ocupa mais espaço vertical na tela */
+                max-height: 75vh; 
             }
         }
     </style>
