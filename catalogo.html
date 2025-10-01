@@ -201,16 +201,16 @@
 
         /* --- Paginação --- */
         .pagination {
-            text-align: center; /* Alinha à esquerda */
+            text-align: center; /* CENTRALIZADO */
             margin: 30px 0 20px;
         }
 
         .page-button {
             padding: 8px 14px; 
             margin: 0 4px;
-            border: 2px solid #333; /* Borda sutil escura */
+            border: 2px solid #333; 
             background-color: transparent; 
-            color: #ccc; /* Cor de texto em cinza claro */
+            color: #ccc; 
             cursor: pointer;
             border-radius: 4px;
             transition: all 0.3s;
@@ -233,6 +233,9 @@
 
         /* --- Rodapé --- */
         footer {
+            /* REMOVE O FIXO - Rodapé Normal */
+            position: relative; 
+            
             text-align: center;
             padding: 15px;
             background-color: #0f0f0f;
@@ -524,9 +527,7 @@
                 <tbody id="service-list">
                     </tbody>
             </table>
-            <div id="pagination" class="pagination"></div>
-
-        </main>
+            <div id="pagination" class="pagination"></div> </main>
 
         <footer>
             <p>&copy; MB Tech | 2025</p>
