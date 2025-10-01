@@ -24,7 +24,12 @@ body {
   color: #ff2b2b;
 }
 
-/* NOVO ESTILO: Botão de link para o catálogo */
+/* Estilos de Botões */
+nav {
+    display: flex;
+    align-items: center;
+}
+
 .btn-link {
     color: #fff;
     padding: 12px 15px;
@@ -32,6 +37,7 @@ body {
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
+    white-space: nowrap; /* Impede a quebra de linha em desktop */
 }
 
 .btn-link:hover {
@@ -46,6 +52,7 @@ body {
   text-decoration: none;
   font-weight: 600;
   transition: background 0.3s ease, transform 0.3s ease;
+  white-space: nowrap; /* Impede a quebra de linha em desktop */
 }
 
 .btn-cta:hover {
@@ -144,4 +151,95 @@ footer {
   background: #0f0f0f;
   color: #777;
   font-size: 14px;
+}
+
+/* ---------------------------------------------------------------------- */
+/* --- OTIMIZAÇÃO MOBILE (Telas de até 600px de largura) --- */
+/* ---------------------------------------------------------------------- */
+@media (max-width: 600px) {
+
+    /* --- CABEÇALHO --- */
+    .header {
+        /* Reduz o padding para maximizar o espaço */
+        padding: 15px 15px;
+    }
+
+    .logo {
+        /* Reduz o tamanho do logo */
+        font-size: 24px;
+    }
+
+    nav {
+        /* Permite que a navegação se quebre para o layout vertical */
+        display: flex;
+        flex-direction: column; 
+        align-items: flex-end; /* Alinha os itens à direita */
+    }
+
+    .btn-link, .btn-cta {
+        /* Reduz o padding e margens dos botões */
+        padding: 8px 12px; 
+        font-size: 14px;
+        margin: 0 0 5px 0; /* Empilha os botões com uma pequena margem */
+        width: auto; /* Deixa o botão se ajustar ao conteúdo */
+    }
+
+    .btn-link {
+        /* Remove a margem direita que estava separando o "Ver Catálogo" */
+        margin-right: 0;
+    }
+
+    /* --- HERO SECTION --- */
+    .hero {
+        /* Reduz o padding superior e inferior */
+        padding: 40px 15px 30px;
+    }
+    
+    .hero-img {
+        /* Imagem menor */
+        max-width: 140px;
+    }
+
+    .hero-title {
+        /* Fonte principal menor para caber na tela */
+        font-size: 28px; 
+        line-height: 1.2;
+    }
+
+    .hero-subtitle {
+        /* Fonte secundária menor */
+        font-size: 16px;
+    }
+
+    /* --- SERVIÇOS --- */
+    .services {
+        padding: 40px 15px;
+    }
+
+    .services h2 {
+        font-size: 26px;
+    }
+
+    .services-grid {
+        /* Força a visualização em uma única coluna vertical */
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* --- CONTATO --- */
+    .contact {
+        padding: 40px 15px;
+    }
+    
+    .contact h2 {
+        font-size: 24px;
+    }
+    
+    .btn-cta {
+        /* Garante que o CTA principal seja maior e mais clicável */
+        width: 100%;
+        max-width: 300px; /* Limita o tamanho em telas muito grandes */
+        display: inline-block;
+        padding: 15px 24px;
+    }
 }
