@@ -24,6 +24,20 @@ body {
   color: #ff2b2b;
 }
 
+/* NOVO ESTILO: Botão de link para o catálogo */
+.btn-link {
+    color: #fff;
+    padding: 12px 15px;
+    margin-right: 15px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.btn-link:hover {
+    color: #ff2b2b;
+}
+
 .btn-cta {
   background: #ff2b2b;
   color: #fff;
