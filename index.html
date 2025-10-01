@@ -9,6 +9,7 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   
   <link rel="icon" href="img.jpeg" type="image/jpeg">
+  <link rel="manifest" href="/manifest.json">
 </head>
 <body>
 
@@ -57,6 +58,23 @@
     <a href="https://api.whatsapp.com/send?phone=75983519119&text=Ol%C3%A1%2C%20vim%20pelo%20seu%20site%21%20Podemos%20marcar%20um%20momento%20para%20conhecer%20o%20serv%C3%A7o%20da%20MB%20Tech%3F" class="btn-cta">Chamar no WhatsApp</a>
   </section>
   
+
+  <script>
+    // ... (Todo o código JS existente) ...
+
+    // NOVO: REGISTRO DO SERVICE WORKER (PWA)
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(registration => {
+                    console.log('SW registrado com sucesso: ', registration);
+                })
+                .catch(registrationError => {
+                    console.log('Falha no registro do SW: ', registrationError);
+                });
+        });
+    }
+</script>
 
   <footer>
     <p>&copy; 2025 MB Tech - Criado por Mylle Braga</p>

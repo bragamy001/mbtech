@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="/manifest.json"> <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
         /* PALETA: Fundo escuro, Destaque #ff2b2b (Vermelho Vibrante) */
@@ -109,6 +109,7 @@
             margin: 0 auto; 
             width: 100%;
             transition: filter 0.3s ease-in-out; 
+            padding-bottom: 60px;
         }
 
         /* --- Barra de Pesquisa (Input) --- */
@@ -233,7 +234,7 @@
 
         /* --- Rodapé --- */
         footer {
-            /* REMOVE O FIXO - Rodapé Normal */
+            /* Rodapé no fluxo normal do documento */
             position: relative; 
             
             text-align: center;
@@ -375,7 +376,6 @@
             border: none;
             border-radius: 6px;
             cursor: pointer;
-            text-align: left;
             transition: background-color 0.2s;
             font-weight: 500;
         }
@@ -527,7 +527,9 @@
                 <tbody id="service-list">
                     </tbody>
             </table>
-            <div id="pagination" class="pagination"></div> </main>
+            <div id="pagination" class="pagination"></div>
+
+        </main>
 
         <footer>
             <p>&copy; MB Tech | 2025</p>
@@ -552,351 +554,352 @@
             </div>
         </div>
     </div>
-    <script>
-        // Lógica do Chat Bot e Catálogo de Serviços
-        const services = [
-            {
-                name: "Planilha de Controle Financeiro",
-                sector: "Finanças",
-                purpose: "Organizar finanças PJ/PF",
-                link: "https://forms.gle/sG5fCMAigpY1rQCVA"
-            },
-            {
-                name: "Dashboard de Controle Financeiro",
-                sector: "Finanças",
-                purpose: "Visualização de Controle Financeiro",
-                link: "https://bragamy001.github.io/fimatendimento/"
-            }
-            ,
-            
-            {
-                name: "Planilha de Solicitação de Acesso à Transações SAP",
-                sector: "Logística",
-                purpose: "Planilha de Solicitação de Acesso à Transações SAP",
-                link: "https://docs.google.com/spreadsheets/d/1ZGo3uXx17IbYJMpb8U92biNDmtgWHzYptxmF0ygBo20/edit?usp=sharing"
-            }
-            ,
 
-
-            {
-                name: "Manutenção",
-                sector: "Manutenção",
-                purpose: "Manutenção",
-                link: "https://docs.google.com/spreadsheets/d/1HYYionWuRFdCj0ljAYH65SmXuOw-ZtseiUmhhVVpf6w/edit?gid=1871696616#gid=1871696616"
-            }    ,
-            
-            {
-                name: "Acompanhamento acadêmico",
-                sector: "Acadêmico",
-                purpose: "Acadêmico",
-                link: "https://docs.google.com/spreadsheets/d/1HYYionWuRFdCj0ljAYH65SmXuOw-ZtseiUmhhVVpf6w/edit?gid=1871696616#gid=1871696616"
-            }    ,
-            {
-                name: "Dashboard de Controle Financeiro",
-                sector: "Finanças",
-                purpose: "Visualização de Controle Financeiro",
-                link: "https://bragamy001.github.io/fimatendimento/"
-            }
-            ,
-            
-            {
-                name: "Planilha de Solicitação de Acesso à Transações SAP",
-                sector: "Logística",
-                purpose: "Planilha de Solicitação de Acesso à Transações SAP",
-                link: "https://docs.google.com/spreadsheets/d/1ZGo3uXx17IbYJMpb8U92biNDmtgWHzYptxmF0ygBo20/edit?usp=sharing"
-            }
-            ,
-
-
-
-            {
-                name: "Manutenção",
-                sector: "Manutenção",
-                purpose: "Manutenção",
-                link: "https://docs.google.com/spreadsheets/d/1HYYionWuRFdCj0ljAYH65SmXuOw-ZtseiUmhhVVpf6w/edit?gid=1871696616#gid=1871696616"
-            }    ,
-            
-            {
-                name: "Acompanhamento acadêmico",
-                sector: "Acadêmico",
-                purpose: "Acadêmico",
-                link: "https://docs.google.com/spreadsheets/d/1HYYionWuRFdCj0ljAYH65SmXuOw-ZtseiUmhhVVpf6w/edit?gid=1871696616#gid=1871696616"
-            },
-            {
-                name: "Dashboard de Controle Financeiro",
-                sector: "Finanças",
-                purpose: "Visualização de Controle Financeiro",
-                link: "https://bragamy001.github.io/fimatendimento/"
-            }
-            ,
-            
-            {
-                name: "Planilha de Solicitação de Acesso à Transações SAP",
-                sector: "Logística",
-                purpose: "Planilha de Solicitação de Acesso à Transações SAP",
-                link: "https://docs.google.com/spreadsheets/d/1ZGo3uXx17IbYJMpb8U92biNDmtgWHzYptxmF0ygBo20/edit?usp=sharing"
-            }
-            ,
-
-
-
-            {
-                name: "Manutenção",
-                sector: "Manutenção",
-                purpose: "Manutenção",
-                link: "https://docs.google.com/spreadsheets/d/1HYYionWuRFdCj0ljAYH65SmXuOw-ZtseiUmhhVVpf6w/edit?gid=1871696616#gid=1871696616"
-            }    ,
-            
-            {
-                name: "Acompanhamento acadêmico",
-                sector: "Acadêmico",
-                purpose: "Acadêmico",
-                link: "https://docs.google.com/spreadsheets/d/1HYYionWuRFdCj0ljAYH65SmXuOw-ZtseiUmhhVVpf6w/edit?gid=1871696616#gid=1871696616"
-            }
-            
-            
-            
-        ];
-
-        let currentPage = 1;
-        const itemsPerPage = 10;
-        let filteredServices = services; 
-        const whatsappNumber = "5575983519119"; 
-
-        // SELEÇÃO DE ELEMENTOS PARA DESFOQUE
-        const mainContent = document.getElementById('main-content');
-        const backdrop = document.getElementById('backdrop');
-        const header = document.querySelector('header');
-        // FIM SELEÇÃO
-
-
-        // --- Lógica de Paginação e Filtragem (MANTIDA) ---
-
-        function displayServices() {
-            const serviceList = document.getElementById('service-list');
-            serviceList.innerHTML = ''; 
-
-            const startIndex = (currentPage - 1) * itemsPerPage;
-            const endIndex = startIndex + itemsPerPage;
-
-            const paginatedServices = filteredServices.slice(startIndex, endIndex);
-
-            paginatedServices.forEach(service => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td data-label="Serviço">${service.name}</td>
-                    <td data-label="Ramo">${service.sector}</td>
-                    <td data-label="Objetivo">${service.purpose}</td>
-                    <td data-label="Link"><a href="${service.link}" target="_blank"><i class="fas fa-external-link-alt"></i> Acessar</a></td> 
-                `;
-                serviceList.appendChild(row);
-            });
-
-            updatePagination(filteredServices.length);
+<script>
+    // Lógica do Chat Bot e Catálogo de Serviços
+    const services = [
+        {
+            name: "Planilha de Controle Financeiro",
+            sector: "Finanças",
+            purpose: "Organizar finanças PJ/PF",
+            link: "https://forms.gle/sG5fCMAigpY1rQCVA"
+        },
+        {
+            name: "Dashboard de Controle Financeiro",
+            sector: "Finanças",
+            purpose: "Visualização de Controle Financeiro",
+            link: "https://bragamy001.github.io/fimatendimento/"
         }
-
-        function filterServices() {
-            const searchInput = document.getElementById('search-input').value.toLowerCase();
-            filteredServices = services.filter(service => {
-                return (
-                    service.name.toLowerCase().includes(searchInput) ||
-                    service.sector.toLowerCase().includes(searchInput) ||
-                    service.purpose.toLowerCase().includes(searchInput)
-                );
-            });
-            currentPage = 1; 
-            displayServices(); 
+        ,
+        
+        {
+            name: "Planilha de Solicitação de Acesso à Transações SAP",
+            sector: "Logística",
+            purpose: "Planilha de Solicitação de Acesso à Transações SAP",
+            link: "https://docs.google.com/spreadsheets/d/1ZGo3uXx17IbYJMpb8U92biNDmtgWHzYptxmF0ygBo20/edit?usp=sharing"
         }
+        ,
 
-        function updatePagination(totalItems) {
-            const pagination = document.getElementById('pagination');
-            pagination.innerHTML = ''; 
 
-            const totalPages = Math.ceil(totalItems / itemsPerPage);
-
-            for (let i = 1; i <= totalPages; i++) {
-                const pageButton = document.createElement('button');
-                pageButton.innerText = i;
-                pageButton.className = 'page-button';
-                
-                if (i === currentPage) {
-                    pageButton.classList.add('active');
-                }
-                
-                pageButton.addEventListener('click', () => {
-                    currentPage = i;
-                    displayServices(); 
-                });
-                pagination.appendChild(pageButton);
-            }
+        {
+            name: "Manutenção",
+            sector: "Manutenção",
+            purpose: "Manutenção",
+            link: "https://docs.google.com/spreadsheets/d/1HYYionWuRFdCj0ljAYH65SmXuOw-ZtseiUmhhVVpf6w/edit?gid=1871696616#gid=1871696616"
+        }    ,
+        
+        {
+            name: "Acompanhamento acadêmico",
+            sector: "Acadêmico",
+            purpose: "Acadêmico",
+            link: "https://docs.google.com/spreadsheets/d/1HYYionWuRFdCj0ljAYH65SmXuOw-ZtseiUmhhVVpf6w/edit?gid=1871696616#gid=1871696616"
+        }    ,
+        {
+            name: "Dashboard de Controle Financeiro",
+            sector: "Finanças",
+            purpose: "Visualização de Controle Financeiro",
+            link: "https://bragamy001.github.io/fimatendimento/"
         }
-
-        // --- Lógica do Chat Bot ---
-
-        let chatState = 0; 
-        let chatData = {
-            option: '',
-            name: ''
-        };
-
-        const optionMap = {
-            '1': 'Contratação de serviço',
-            '2': 'Conhecimento das ferramentas',
-            '3': 'Ajuste de algum serviço já contratado'
-        };
-
-        const chatBody = document.getElementById('chat-body');
-        const chatInputContainer = document.getElementById('chat-input-container');
-        const chatInput = document.getElementById('chat-input');
-
-
-        // Funções de UI
-        function createBotMessage(text) {
-            const msgDiv = document.createElement('div');
-            msgDiv.className = 'bot-message';
-            msgDiv.innerHTML = text;
-            return msgDiv;
+        ,
+        
+        {
+            name: "Planilha de Solicitação de Acesso à Transações SAP",
+            sector: "Logística",
+            purpose: "Planilha de Solicitação de Acesso à Transações SAP",
+            link: "https://docs.google.com/spreadsheets/d/1ZGo3uXx17IbYJMpb8U92biNDmtgWHzYptxmF0ygBo20/edit?usp=sharing"
         }
+        ,
 
-        function createUserMessage(text) {
-            const msgDiv = document.createElement('div');
-            msgDiv.className = 'user-message';
-            msgDiv.innerHTML = text;
-            return msgDiv;
+
+
+        {
+            name: "Manutenção",
+            sector: "Manutenção",
+            purpose: "Manutenção",
+            link: "https://docs.google.com/spreadsheets/d/1HYYionWuRFdCj0ljAYH65SmXuOw-ZtseiUmhhVVpf6w/edit?gid=1871696616#gid=1871696616"
+        }    ,
+        
+        {
+            name: "Acompanhamento acadêmico",
+            sector: "Acadêmico",
+            purpose: "Acadêmico",
+            link: "https://docs.google.com/spreadsheets/d/1HYYionWuRFdCj0ljAYH65SmXuOw-ZtseiUmhhVVpf6w/edit?gid=1871696616#gid=1871696616"
+        },
+        {
+            name: "Dashboard de Controle Financeiro",
+            sector: "Finanças",
+            purpose: "Visualização de Controle Financeiro",
+            link: "https://bragamy001.github.io/fimatendimento/"
         }
-
-        // Funções de Rolagem
-        function scrollToBottom() {
-            requestAnimationFrame(() => {
-                setTimeout(() => {
-                    chatBody.scrollTop = chatBody.scrollHeight;
-                }, 50); 
-            });
+        ,
+        
+        {
+            name: "Planilha de Solicitação de Acesso à Transações SAP",
+            sector: "Logística",
+            purpose: "Planilha de Solicitação de Acesso à Transações SAP",
+            link: "https://docs.google.com/spreadsheets/d/1ZGo3uXx17IbYJMpb8U92biNDmtgWHzYptxmF0ygBo20/edit?usp=sharing"
         }
+        ,
 
-        function appendMessage(element) {
-            chatBody.appendChild(element);
-            scrollToBottom();
+
+
+        {
+            name: "Manutenção",
+            sector: "Manutenção",
+            purpose: "Manutenção",
+            link: "https://docs.google.com/spreadsheets/d/1HYYionWuRFdCj0ljAYH65SmXuOw-ZtseiUmhhVVpf6w/edit?gid=1871696616#gid=1871696616"
+        }    ,
+        
+        {
+            name: "Acompanhamento acadêmico",
+            sector: "Acadêmico",
+            purpose: "Acadêmico",
+            link: "https://docs.google.com/spreadsheets/d/1HYYionWuRFdCj0ljAYH65SmXuOw-ZtseiUmhhVVpf6w/edit?gid=1871696616#gid=1871696616"
         }
+        
+        
+        
+    ];
 
-        function openChat() {
-            const modal = document.getElementById('chat-modal');
-            
-            // ATIVA: Desfoque e Backdrop
-            backdrop.style.display = 'block';
-            mainContent.classList.add('blur-content');
-            header.classList.add('blur-content');
+    let currentPage = 1;
+    const itemsPerPage = 10;
+    let filteredServices = services; 
+    const whatsappNumber = "5575983519119"; 
 
-            modal.style.display = 'block';
-            
-            chatBody.innerHTML = '';
-            chatState = 0; 
-            chatData = { option: '', name: '' }; 
-            chatInputContainer.classList.add('hidden'); 
-            
-            setTimeout(showInitialMessage, 300);
-        }
+    // SELEÇÃO DE ELEMENTOS PARA DESFOQUE
+    const mainContent = document.getElementById('main-content');
+    const backdrop = document.getElementById('backdrop');
+    const header = document.querySelector('header');
+    // FIM SELEÇÃO
 
-        function closeChat() {
-            const modal = document.getElementById('chat-modal');
-            
-            // DESATIVA: Desfoque e Backdrop
-            backdrop.style.display = 'none';
-            mainContent.classList.remove('blur-content');
-            header.classList.remove('blur-content');
 
-            modal.style.display = 'none';
-        }
+    // --- Lógica de Paginação e Filtragem (MANTIDA) ---
 
-        // Funções de Fluxo
-        function showInitialMessage() {
-            const msg = createBotMessage("Olá! Sou o Assistente MB Tech. Como posso te ajudar hoje?");
-            appendMessage(msg);
+    function displayServices() {
+        const serviceList = document.getElementById('service-list');
+        serviceList.innerHTML = ''; 
 
-            const optionsDiv = document.createElement('div');
-            optionsDiv.innerHTML = `
-                <button class="chat-option" onclick="handleOption('1')">1. Contratação de serviço</button>
-                <button class="chat-option" onclick="handleOption('2')">2. Conhecimento das ferramentas</button>
-                <button class="chat-option" onclick="handleOption('3')">3. Ajuste de algum serviço já contratado</button>
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+
+        const paginatedServices = filteredServices.slice(startIndex, endIndex);
+
+        paginatedServices.forEach(service => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td data-label="Serviço">${service.name}</td>
+                <td data-label="Ramo">${service.sector}</td>
+                <td data-label="Objetivo">${service.purpose}</td>
+                <td data-label="Link"><a href="${service.link}" target="_blank"><i class="fas fa-external-link-alt"></i> Acessar</a></td> 
             `;
-            optionsDiv.style.marginBottom = '10px'; 
-            appendMessage(optionsDiv);
-            
-            chatState = 0; // Estado inicial com opções
-        }
+            serviceList.appendChild(row);
+        });
 
-        function handleOption(optionKey) {
-            if (chatState !== 0) return;
+        updatePagination(filteredServices.length);
+    }
+
+    function filterServices() {
+        const searchInput = document.getElementById('search-input').value.toLowerCase();
+        filteredServices = services.filter(service => {
+            return (
+                service.name.toLowerCase().includes(searchInput) ||
+                service.sector.toLowerCase().includes(searchInput) ||
+                service.purpose.toLowerCase().includes(searchInput)
+            );
+        });
+        currentPage = 1; 
+        displayServices(); 
+    }
+
+    function updatePagination(totalItems) {
+        const pagination = document.getElementById('pagination');
+        pagination.innerHTML = ''; 
+
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+        for (let i = 1; i <= totalPages; i++) {
+            const pageButton = document.createElement('button');
+            pageButton.innerText = i;
+            pageButton.className = 'page-button';
             
-            // Remove as opções
-            const optionsDiv = chatBody.lastElementChild;
-            if (optionsDiv && optionsDiv.classList.contains('chat-option') === false) { 
-                optionsDiv.style.display = 'none';
+            if (i === currentPage) {
+                pageButton.classList.add('active');
             }
-
-            // Registra a resposta do usuário
-            chatData.option = optionMap[optionKey];
-            appendMessage(createUserMessage(optionKey + ". " + chatData.option));
-
-            // Próximo estado: Coletar Nome
-            chatState = 1; 
-            setTimeout(() => {
-                chatInputContainer.classList.remove('hidden'); 
-                chatInput.placeholder = "Digite seu nome...";
-                chatInput.value = '';
-                chatInput.focus();
-                appendMessage(createBotMessage(`Perfeito! Você selecionou ${chatData.option}. Qual é o seu nome?`));
-            }, 800); 
-        }
-
-        function handleInput() {
-            const inputValue = chatInput.value.trim();
-
-            // Se estivermos no estado de coletar o nome (1), processa
-            if (!inputValue || chatState !== 1) return; 
-
-            // Adiciona a mensagem do usuário ao chat
-            appendMessage(createUserMessage(inputValue));
-            chatInput.value = ''; // Limpa o input
-
-            // Coletou o Nome
-            chatData.name = inputValue;
-            chatState = 2; // Finalizado
             
-            // FINALIZA: Esconde o input e mostra o link do WhatsApp
-            chatInputContainer.classList.add('hidden'); 
+            pageButton.addEventListener('click', () => {
+                currentPage = i;
+                displayServices(); 
+            });
+            pagination.appendChild(pageButton);
+        }
+    }
 
+    // --- Lógica do Chat Bot ---
+
+    let chatState = 0; 
+    let chatData = {
+        option: '',
+        name: ''
+    };
+
+    const optionMap = {
+        '1': 'Contratação de serviço',
+        '2': 'Conhecimento das ferramentas',
+        '3': 'Ajuste de algum serviço já contratado'
+    };
+
+    const chatBody = document.getElementById('chat-body');
+    const chatInputContainer = document.getElementById('chat-input-container');
+    const chatInput = document.getElementById('chat-input');
+
+
+    // Funções de UI
+    function createBotMessage(text) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = 'bot-message';
+        msgDiv.innerHTML = text;
+        return msgDiv;
+    }
+
+    function createUserMessage(text) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = 'user-message';
+        msgDiv.innerHTML = text;
+        return msgDiv;
+    }
+
+    // Funções de Rolagem
+    function scrollToBottom() {
+        requestAnimationFrame(() => {
             setTimeout(() => {
-                // Mensagem de finalização
-                appendMessage(createBotMessage(`Obrigado, ${chatData.name}! Para finalizar o ${chatData.option} clique.`));
-                showWhatsappLink();
-            }, 800);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }, 50); 
+        });
+    }
+
+    function appendMessage(element) {
+        chatBody.appendChild(element);
+        scrollToBottom();
+    }
+
+    function openChat() {
+        const modal = document.getElementById('chat-modal');
+        
+        // ATIVA: Desfoque e Backdrop
+        backdrop.style.display = 'block';
+        mainContent.classList.add('blur-content');
+        header.classList.add('blur-content');
+
+        modal.style.display = 'block';
+        
+        chatBody.innerHTML = '';
+        chatState = 0; 
+        chatData = { option: '', name: '' }; 
+        chatInputContainer.classList.add('hidden'); 
+        
+        setTimeout(showInitialMessage, 300);
+    }
+
+    function closeChat() {
+        const modal = document.getElementById('chat-modal');
+        
+        // DESATIVA: Desfoque e Backdrop
+        backdrop.style.display = 'none';
+        mainContent.classList.remove('blur-content');
+        header.classList.remove('blur-content');
+
+        modal.style.display = 'none';
+    }
+
+    // Funções de Fluxo
+    function showInitialMessage() {
+        const msg = createBotMessage("Olá! Sou o Assistente MB Tech. Como posso te ajudar hoje?");
+        appendMessage(msg);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.innerHTML = `
+            <button class="chat-option" onclick="handleOption('1')">1. Contratação de serviço</button>
+            <button class="chat-option" onclick="handleOption('2')">2. Conhecimento das ferramentas</button>
+            <button class="chat-option" onclick="handleOption('3')">3. Ajuste de algum serviço já contratado</button>
+        `;
+        optionsDiv.style.marginBottom = '10px'; 
+        appendMessage(optionsDiv);
+        
+        chatState = 0; // Estado inicial com opções
+    }
+
+    function handleOption(optionKey) {
+        if (chatState !== 0) return;
+        
+        // Remove as opções
+        const optionsDiv = chatBody.lastElementChild;
+        if (optionsDiv && optionsDiv.classList.contains('chat-option') === false) { 
+            optionsDiv.style.display = 'none';
         }
 
-        function showWhatsappLink() {
-            // Monta a mensagem final com NOME e OPÇÃO
-            const finalMessage = `
+        // Registra a resposta do usuário
+        chatData.option = optionMap[optionKey];
+        appendMessage(createUserMessage(optionKey + ". " + chatData.option));
+
+        // Próximo estado: Coletar Nome
+        chatState = 1; 
+        setTimeout(() => {
+            chatInputContainer.classList.remove('hidden'); 
+            chatInput.placeholder = "Digite seu nome...";
+            chatInput.value = '';
+            chatInput.focus();
+            appendMessage(createBotMessage(`Perfeito! Você selecionou ${chatData.option}. Qual é o seu nome?`));
+        }, 800); 
+    }
+
+    function handleInput() {
+        const inputValue = chatInput.value.trim();
+
+        // Se estivermos no estado de coletar o nome (1), processa
+        if (!inputValue || chatState !== 1) return; 
+
+        // Adiciona a mensagem do usuário ao chat
+        appendMessage(createUserMessage(inputValue));
+        chatInput.value = ''; // Limpa o input
+
+        // Coletou o Nome
+        chatData.name = inputValue;
+        chatState = 2; // Finalizado
+        
+        // FINALIZA: Esconde o input e mostra o link do WhatsApp
+        chatInputContainer.classList.add('hidden'); 
+
+        setTimeout(() => {
+            // Mensagem de finalização
+            appendMessage(createBotMessage(`Obrigado, ${chatData.name}! Para finalizar o ${chatData.option} clique.`));
+            showWhatsappLink();
+        }, 800);
+    }
+
+    function showWhatsappLink() {
+        // Monta a mensagem final com NOME e OPÇÃO
+        const finalMessage = `
 Olá! Meu nome é ${chatData.name} e preciso de ajuda com: ${chatData.option}.
 `;
 
-            const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(finalMessage.trim())}`;
+        const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(finalMessage.trim())}`;
 
-            const linkButton = document.createElement('a');
-            linkButton.href = whatsappLink;
-            linkButton.target = "_blank";
-            linkButton.className = 'chat-option whatsapp-link-btn';
-            linkButton.innerHTML = '<i class="fab fa-whatsapp"></i> Iniciar Atendimento no WhatsApp';
-            
-            appendMessage(linkButton);
-        }
+        const linkButton = document.createElement('a');
+        linkButton.href = whatsappLink;
+        linkButton.target = "_blank";
+        linkButton.className = 'chat-option whatsapp-link-btn';
+        linkButton.innerHTML = '<i class="fab fa-whatsapp"></i> Iniciar Atendimento no WhatsApp';
+        
+        appendMessage(linkButton);
+    }
 
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // Inicializa a exibição da lista de serviços
-            displayServices(); 
-            // Adiciona o listener para a pesquisa
-            document.getElementById('search-input').addEventListener('input', filterServices); 
-        });
-    </script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Inicializa a exibição da lista de serviços
+        displayServices(); 
+        // Adiciona o listener para a pesquisa
+        document.getElementById('search-input').addEventListener('input', filterServices); 
+    });
+</script>
 </body>
 </html>

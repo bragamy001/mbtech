@@ -1,0 +1,22 @@
+{
+    "name": "MB Tech Soluções",
+    "short_name": "MB Tech",
+    "description": "Catálogo e Soluções em Tecnologia da MB Tech.",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#0f0f0f",
+    "theme_color": "#ff2b2b",
+    "icons": [
+        {
+            "src": "img.jpeg",
+            "sizes": "192x192",
+            "type": "image/jpeg"
+        },
+        {
+            "src": "img.jpeg",
+            "sizes": "512x512",
+            "type": "image/jpeg"
+        }
+    ]
+}
