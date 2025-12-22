@@ -10,20 +10,30 @@
   
   <link rel="icon" href="img.jpeg" type="image/jpeg">
   <link rel="manifest" href="/manifest.json">
+  <style>
+    body {
+        padding-top: 55px;
+    }
+    @media (max-width: 600px) { 
+        body {
+            padding-top: 85px; 
+        }
+    }
+  </style>
 </head>
 <body>
 
   <header class="header">
     <div class="logo">MB Tech</div>
     <nav>
-        <a href="catalogo.html" class="btn-link">Ver Catálogo</a>
+        <a href="cursos.html" class="btn-link">Nossos Cursos</a>
         <a href="https://api.whatsapp.com/send?phone=75983519119&text=Ol%C3%A1%2C%20vim%20pelo%20seu%20site%21%20Podemos%20marcar%20um%20momento%20para%20conhecer%20o%20servi%C3%A7o%20da%20MB%20Tech%3F" class="btn-cta">Quero Contratar</a>
     </nav>
   </header>
 
   <section class="hero">
-    <img src="img.jpeg" alt="Animação MB Tech" class="hero-img">
-    <h1 class="hero-title">Soluções em Tecnologia pra quem não gosta de enrolação.</h1>
+    <img src="img.jpeg" alt="Logo MB Tech" class="hero-img">
+    <h1 class="hero-title">Soluções que funcionam para quem não gosta de enrolação.</h1>
     <p class="hero-subtitle">Análise de dados, automação e dashboards de impacto.</p>
   </section>
 
@@ -55,15 +65,25 @@
 
   <section id="contato" class="contact">
     <h2>Bora transformar seus resultados?</h2>
-    <a href="https://api.whatsapp.com/send?phone=75983519119&text=Ol%C3%A1%2C%20vim%20pelo%20seu%20site%21%20Podemos%20marcar%20um%20momento%20para%20conhecer%20o%20serv%C3%A7o%20da%20MB%20Tech%3F" class="btn-cta">Chamar no WhatsApp</a>
+    <a href="https://api.whatsapp.com/send?phone=75983519119&text=Ol%C3%A1%2C%20vim%20pelo%20seu%20site%21%20Podemos%20marcar%20um%20momento%20para%20conhecer%20o%20servi%C3%A7o%20da%20MB%20Tech%3F" class="btn-cta">Fale Conosco</a>
   </section>
-  
-
-  
 
   <footer>
     <p>&copy; 2025 MB Tech - Criado por Mylle Braga</p>
   </footer>
 
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(registration => {
+            console.log('Service Worker registrado com sucesso:', registration.scope);
+          })
+          .catch(err => {
+            console.log('Falha no registro do Service Worker:', err);
+          });
+      });
+    }
+  </script>
 </body>
 </html>

@@ -22,11 +22,9 @@ self.addEventListener('fetch', event => {
     event.respondWith(
         caches.match(event.request)
             .then(response => {
-                // Retorna do cache se encontrado
                 if (response) {
                     return response;
                 }
-                // Senão, busca na rede
                 return fetch(event.request);
             }
         )
