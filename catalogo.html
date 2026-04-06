@@ -10,9 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="manifest" href="/manifest.json">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> 
     
     <style>
-        /* PALETA: Fundo escuro, Destaque #ff2b2b (Vermelho Vibrante) */
 
         * {
             box-sizing: border-box; 
@@ -20,17 +20,15 @@
 
         body {
             font-family: 'Roboto', 'Inter', sans-serif; 
-            background: linear-gradient(135deg, #0f0f0f, #1a1a1a); /* Fundo Escuro */
-            color: #ccc; /* Texto principal em cinza claro */
-            margin: 0;
+            background: linear-gradient(135deg, #0f0f0f, #1a1a1a); 
+            color: #ccc; 
             padding: 0;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            padding-top: 60px; 
+            padding-top: 55px; 
         }
 
-        /* --- CLASSE DE DESFOQUE (Blur) --- */
         .blur-content {
             filter: blur(5px);
             pointer-events: none;
@@ -48,61 +46,8 @@
             background-color: rgba(0, 0, 0, 0.6); 
             z-index: 1010;
         }
-        /* --- FIM CLASSE DE DESFOQUE --- */
 
-
-        /* --- Cabeçalho --- */
-        header {
-            position: fixed; 
-            top: 0; 
-            left: 0;
-            width: 100%; 
-            z-index: 1000; 
-            background-color: #121212; 
-            color: white;
-            padding: 12px 20px; 
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
-            transition: filter 0.3s ease-in-out; 
-        }
-
-        .header-content {
-            display: flex;
-            align-items: center;
-            max-width: 1200px; 
-            margin: 0 auto;
-        }
-
-        .header-icon {
-            font-size: 24px; 
-            margin-right: 15px;
-            color: #ff2b2b; 
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 24px; 
-            font-weight: 700; 
-            white-space: nowrap; 
-        }
-
-        .back-link {
-            color: #fff;
-            background: #ff2b2b;
-            padding: 8px 15px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-left: auto;
-            transition: background 0.3s ease, transform 0.3s ease;
-            white-space: nowrap;
-        }
-
-        .back-link:hover {
-            background-color: #ff1a1a;
-            transform: scale(1.02);
-        }
-
-
+        
         main {
             flex: 1;
             padding: 30px 20px; 
@@ -112,7 +57,6 @@
             transition: filter 0.3s ease-in-out; 
         }
 
-        /* --- Barra de Pesquisa (Input) --- */
         .search-container {
             display: flex;
             align-items: center;
@@ -146,7 +90,6 @@
             font-size: 18px;
         }
 
-        /* --- Tabela --- */
         table {
             width: 100%;
             border-collapse: separate; 
@@ -200,9 +143,8 @@
             color: #ff2b2b;
         }
 
-        /* --- Paginação --- */
         .pagination {
-            text-align: center; /* CENTRALIZADO */
+            text-align: center; 
             margin: 30px 0 20px;
         }
 
@@ -232,9 +174,7 @@
         }
 
 
-        /* --- Rodapé --- */
         footer {
-            /* REMOVE O FIXO - Rodapé Normal */
             position: relative; 
             
             text-align: center;
@@ -249,7 +189,6 @@
             margin: 0;
         }
 
-        /* --- Botão de Chat Fixo (FAB) --- */
         .chat-fab {
             position: fixed;
             bottom: 25px; 
@@ -276,7 +215,6 @@
             transform: scale(1.05); 
         }
 
-        /* --- Estilos para o Modal de Chat (Pop-up) --- */
         .chat-modal {
             display: none; 
             position: fixed;
@@ -292,7 +230,6 @@
             animation: fadeIn 0.3s;
         }
 
-        /* Estilo do Backdrop (Fundo Fosco) */
         .chat-backdrop {
             display: none;
             position: fixed;
@@ -454,25 +391,16 @@
         }
 
 
-        /* --- OTIMIZAÇÃO MOBILE (Telas de até 600px de largura) --- */
         @media (max-width: 600px) {
             
-            /* --- CABEÇALHO COMPACTO --- */
-            header {
-                padding: 10px 15px;
-            }
-            
-            .back-link {
-                padding: 6px 10px;
-                font-size: 14px;
-                margin-left: 10px; 
+            body {
+                padding-top: 85px; 
             }
 
             main {
                 padding: 20px 10px;
             }
 
-            /* --- TABELA RESPONSIVA (Mobile-First Table) --- */
             table { display: block; overflow-x: hidden; border-radius: 0; box-shadow: none; }
             thead { display: none; }
             tbody { display: block; }
@@ -481,7 +409,6 @@
             td:last-child { border-bottom: none; }
             td:before { content: attr(data-label); position: absolute; left: 15px; width: calc(50% - 20px); text-align: left; font-weight: 600; color: #ff2b2b; }
             
-            /* --- CHAT BOT MOBILE --- */
             .chat-fab {
                 width: 50px;
                 height: 50px;
@@ -500,12 +427,13 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <i class="fas fa-tools header-icon"></i> 
-            <h1>Catálogo de Serviços</h1>
-            <a href="index.html" class="back-link">Voltar ao Site</a>
-        </div>
+    <header class="header">
+        <div class="logo">MB Tech</div>
+        <nav>
+            <a href="cursos.html" class="btn-link">Nossos Cursos</a>
+            <a href="index.html" class="btn-link">Voltar ao Início</a>
+            <a href="https://api.whatsapp.com/send?phone=75983519119&text=Ol%C3%A1%2C%20vim%20pelo%20seu%20site%21%20Podemos%20marcar%20um%20momento%20para%20conhecer%20o%20servi%C3%A7o%20da%20MB%20Tech%3F" class="btn-cta">Quero Contratar</a>
+        </nav>
     </header>
 
     <div id="backdrop" class="chat-backdrop"></div> 
@@ -555,90 +483,13 @@
     </div>
     
     <script>
-        // Lógica do Chat Bot e Catálogo de Serviços
         const services = [
             {
-                name: "Planilha de Controle Financeiro",
+                name: "Sistema PMS - Gestão de reservas em Hotel",
                 sector: "Finanças",
                 purpose: "Organizar finanças PJ/PF",
-                link: "https://google.com"
-            },
-            {
-                name: "Dashboard de Controle Financeiro",
-                sector: "Finanças",
-                purpose: "Visualização de Controle Financeiro",
-                link: "https://bragamy001.github.io/fimatendimento/"
+                link: "https://bragamy001.github.io/hotel_bm/"
             }
-            ,
-            
-            {
-                name: "Planilha de Solicitação de Acesso à Transações SAP",
-                sector: "Logística",
-                purpose: "Planilha de Solicitação de Acesso à Transações SAP",
-                link: "https://google.com"
-            }
-            ,
-
-
-            {
-                name: "Manutenção",
-                sector: "Manutenção",
-                purpose: "Manutenção",
-                link: "https://google.com"
-            }    ,
-            
-            {
-                name: "Acompanhamento acadêmico",
-                sector: "Acadêmico",
-                purpose: "Acadêmico",
-                link: "https://google.com"
-            }    ,
-            {
-                name: "Dashboard de Controle Financeiro",
-                sector: "Finanças",
-                purpose: "Visualização de Controle Financeiro",
-                link: "https://google.com"
-            }
-            ,
-            
-            {
-                name: "Planilha de Solicitação de Acesso à Transações SAP",
-                sector: "Logística",
-                purpose: "Planilha de Solicitação de Acesso à Transações SAP",
-                link: "https://google.com"
-            }
-            ,
-
-
-
-            {
-                name: "Manutenção",
-                sector: "Manutenção",
-                purpose: "Manutenção",
-                link: "https://google.com"
-            }    ,
-            
-            {
-                name: "Acompanhamento acadêmico",
-                sector: "Acadêmico",
-                purpose: "Acadêmico",
-                link: "https://google.com"
-            },
-            {
-                name: "Dashboard de Controle Financeiro",
-                sector: "Finanças",
-                purpose: "Visualização de Controle Financeiro",
-                link: "https://google.com"
-            }
-            ,
-            
-            {
-                name: "Planilha de Solicitação de Acesso à Transações SAP",
-                sector: "Logística",
-                purpose: "Planilha de Solicitação de Acesso à Transações SAP",
-                link: "https://google.com"
-            }
-            
             
             
         ];
@@ -648,14 +499,11 @@
         let filteredServices = services; 
         const whatsappNumber = "5575983519119"; 
 
-        // SELEÇÃO DE ELEMENTOS PARA DESFOQUE
         const mainContent = document.getElementById('main-content');
         const backdrop = document.getElementById('backdrop');
         const header = document.querySelector('header');
-        // FIM SELEÇÃO
 
 
-        // --- Lógica de Paginação e Filtragem (MANTIDA) ---
 
         function displayServices() {
             const serviceList = document.getElementById('service-list');
@@ -716,7 +564,6 @@
             }
         }
 
-        // --- Lógica do Chat Bot ---
 
         let chatState = 0; 
         let chatData = {
@@ -735,7 +582,6 @@
         const chatInput = document.getElementById('chat-input');
 
 
-        // Funções de UI
         function createBotMessage(text) {
             const msgDiv = document.createElement('div');
             msgDiv.className = 'bot-message';
@@ -750,7 +596,6 @@
             return msgDiv;
         }
 
-        // Funções de Rolagem
         function scrollToBottom() {
             requestAnimationFrame(() => {
                 setTimeout(() => {
@@ -767,7 +612,6 @@
         function openChat() {
             const modal = document.getElementById('chat-modal');
             
-            // ATIVA: Desfoque e Backdrop
             backdrop.style.display = 'block';
             mainContent.classList.add('blur-content');
             header.classList.add('blur-content');
@@ -785,7 +629,6 @@
         function closeChat() {
             const modal = document.getElementById('chat-modal');
             
-            // DESATIVA: Desfoque e Backdrop
             backdrop.style.display = 'none';
             mainContent.classList.remove('blur-content');
             header.classList.remove('blur-content');
@@ -793,7 +636,6 @@
             modal.style.display = 'none';
         }
 
-        // Funções de Fluxo
         function showInitialMessage() {
             const msg = createBotMessage("Olá! Sou o Assistente MB Tech. Como posso te ajudar hoje?");
             appendMessage(msg);
@@ -807,23 +649,20 @@
             optionsDiv.style.marginBottom = '10px'; 
             appendMessage(optionsDiv);
             
-            chatState = 0; // Estado inicial com opções
+            chatState = 0; 
         }
 
         function handleOption(optionKey) {
             if (chatState !== 0) return;
             
-            // Remove as opções
             const optionsDiv = chatBody.lastElementChild;
             if (optionsDiv && optionsDiv.classList.contains('chat-option') === false) { 
-                optionsDiv.style.display = 'none';
+                optionsOptions.style.display = 'none';
             }
 
-            // Registra a resposta do usuário
             chatData.option = optionMap[optionKey];
             appendMessage(createUserMessage(optionKey + ". " + chatData.option));
 
-            // Próximo estado: Coletar Nome
             chatState = 1; 
             setTimeout(() => {
                 chatInputContainer.classList.remove('hidden'); 
@@ -837,29 +676,23 @@
         function handleInput() {
             const inputValue = chatInput.value.trim();
 
-            // Se estivermos no estado de coletar o nome (1), processa
             if (!inputValue || chatState !== 1) return; 
 
-            // Adiciona a mensagem do usuário ao chat
             appendMessage(createUserMessage(inputValue));
-            chatInput.value = ''; // Limpa o input
+            chatInput.value = ''; 
 
-            // Coletou o Nome
             chatData.name = inputValue;
-            chatState = 2; // Finalizado
+            chatState = 2; 
             
-            // FINALIZA: Esconde o input e mostra o link do WhatsApp
             chatInputContainer.classList.add('hidden'); 
 
             setTimeout(() => {
-                // Mensagem de finalização
                 appendMessage(createBotMessage(`Obrigado, ${chatData.name}! Para finalizar o ${chatData.option} clique.`));
                 showWhatsappLink();
             }, 800);
         }
 
         function showWhatsappLink() {
-            // Monta a mensagem final com NOME e OPÇÃO
             const finalMessage = `
 Olá! Meu nome é ${chatData.name} e preciso de ajuda com: ${chatData.option}.
 `;
@@ -877,9 +710,7 @@ Olá! Meu nome é ${chatData.name} e preciso de ajuda com: ${chatData.option}.
 
 
         document.addEventListener('DOMContentLoaded', () => {
-            // Inicializa a exibição da lista de serviços
             displayServices(); 
-            // Adiciona o listener para a pesquisa
             document.getElementById('search-input').addEventListener('input', filterServices); 
         });
     </script>

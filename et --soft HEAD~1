@@ -1,0 +1,320 @@
+[33mcommit b3a86f3bd05e313bb3beaa6e34e981a6f2e454b5[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Mylle Braga <mcsouza297@gmail.com>
+Date:   Mon Dec 22 17:18:28 2025 -0300
+
+    update
+
+[1mdiff --git "a/arquivos originais de bkp/MB Tech - Aprenseta\303\247\303\243o.pdf" "b/arquivos originais de bkp/MB Tech - Aprenseta\303\247\303\243o.pdf"[m
+[1mnew file mode 100644[m
+[1mindex 0000000..b950201[m
+[1m--- /dev/null[m
+[1m+++ "b/arquivos originais de bkp/MB Tech - Aprenseta\303\247\303\243o.pdf"[m	
+[36m@@ -0,0 +1,127 @@[m
+[32m+[m[32mMB Tech: Consultoria[m
+[32m+[m[32mem Tecnologia e[m
+[32m+[m[32mAnálise de Dados[m
+[32m+[m
+[32m+[m[32mTransformando dados em decisões estratégicas e resultados concretos[m
+[32m+[m[32mpara o seu negócio[m
+[32m+[m[32mQuem é Mylle Braga?[m
+[32m+[m
+[32m+[m[32m                                                           Experiência e Expertise[m
+[32m+[m
+[32m+[m[32m                                                                            Analista de Dados Sênior no Grupo Boticário, com sólida trajetória em[m
+[32m+[m[32m                                                                            grandes indústrias como Ford e Pirelli. Especialista reconhecida em análise[m
+[32m+[m[32m                                                                            de dados, automação de processos e desenvolvimento de soluções[m
+[32m+[m[32m                                                                            tecnológicas personalizadas.[m
+[32m+[m
+[32m+[m[32m                                                                            Como consultora e instrutora, Mylle é dedicada a capacitar empresas e[m
+[32m+[m[32m                                                                            profissionais, transformando dados brutos em insights estratégicos que[m
+[32m+[m[32m                                                                            impulsionam resultados mensuráveis e decisões mais assertivas.[m
+[32m+[m[32mO que é a MB Tech?[m
+[32m+[m
+[32m+[m[32mConsultoria                         Dashboards                              Soluções[m
+[32m+[m[32mEspecializada                       Inteligentes                            Personalizadas[m
+[32m+[m
+[32m+[m[32mSoluções completas em tecnologia    Desenvolvimento de painéis              Serviços sob medida para otimizar[m
+[32m+[m[32mpara análise de dados, automação e  interativos que facilitam visualização  processos e apoiar decisões[m
+[32m+[m[32minteligência de negócios            e monitoramento de KPIs                 baseadas em dados concretos[m
+[32m+[m[32m                                    estratégicos[m
+[32m+[m[32mNossos Diferenciais[m
+[32m+[m
+[32m+[m[32m01                                    02[m
+[32m+[m
+[32m+[m[32mExpertise                             Personalização Total[m
+[32m+[m[32mComprovada[m
+[32m+[m[32m                                      Soluções desenvolvidas sob medida,[m
+[32m+[m[32mExperiência técnica aliada à prática  perfeitamente alinhadas às[m
+[32m+[m[32mem grandes empresas                   necessidades específicas de cada[m
+[32m+[m[32mmultinacionais e setores diversos do  cliente[m
+[32m+[m[32mmercado[m
+[32m+[m
+[32m+[m[32m03[m
+[32m+[m
+[32m+[m[32mFoco em Resultados[m
+[32m+[m
+[32m+[m[32mCompromisso com resultados mensuráveis e melhoria contínua dos[m
+[32m+[m[32mprocessos de negócio[m
+[32m+[m[32mMontagem de Dashboards Inteligentes[m
+[32m+[m
+[32m+[m[32mVisualização de Dados Poderosa[m
+[32m+[m
+[32m+[m[32m• Consolidação de múltiplas fontes de dados em painéis claros e intuitivos[m
+[32m+[m[32m• Visualizações dinâmicas que facilitam o acompanhamento em tempo real[m
+[32m+[m[32m• Interface amigável que transforma complexidade em simplicidade[m
+[32m+[m
+[32m+[m[32m  Controle Financeiro[m
+[32m+[m
+[32m+[m[32m   Monitoramento de receitas, despesas e fluxo de caixa[m
+[32m+[m
+[32m+[m[32m  Dashboards de Vendas[m
+[32m+[m
+[32m+[m[32m   Acompanhamento de metas, conversões e performance[m
+[32m+[m
+[32m+[m[32m  Indicadores Operacionais[m
+[32m+[m
+[32m+[m[32m   Produção, logística e eficiência de processos[m
+[32m+[m[32mAutomação de[m
+[32m+[m[32mProcessos e Análises[m
+[32m+[m
+[32m+[m[32m              Redução de Tarefas Manuais[m
+[32m+[m
+[32m+[m[32m                  Elimine trabalhos repetitivos com automação inteligente e[m
+[32m+[m[32m                  ganhe tempo para focar no estratégico[m
+[32m+[m
+[32m+[m[32m              Fluxos Eficientes[m
+[32m+[m
+[32m+[m[32m                  Implementação de processos otimizados que aumentam[m
+[32m+[m[32m                  produtividade e reduzem erros operacionais[m
+[32m+[m
+[32m+[m[32m              Análises Avançadas[m
+[32m+[m
+[32m+[m[32m                  Identifique oportunidades de crescimento e antecipe riscos[m
+[32m+[m[32m                  com análises preditivas sofisticadas[m
+[32m+[m[32mCursos e Consultorias Personalizadas[m
+[32m+[m
+[32m+[m[32mTreinamentos Práticos                 Mentorias                             Consultoria Estratégica[m
+[32m+[m[32m                                      Especializadas[m
+[32m+[m[32mCapacitação em Power BI, Excel                                              Implantação e governança de dados,[m
+[32m+[m[32mavançado e ferramentas essenciais de  Desenvolvimento de equipes e cultura  garantindo segurança, qualidade e[m
+[32m+[m[32manálise de dados com aplicação real   orientada a dados para transformação  conformidade[m
+[32m+[m[32m                                      digital consistente[m
+[32m+[m[32mCases de Sucesso[m
+[32m+[m
+[32m+[m[32m1  Ford[m
+[32m+[m
+[32m+[m[32m   Melhoria significativa na visualização de KPIs estratégicos[m
+[32m+[m[32m   através de dashboards customizados que aumentaram a[m
+[32m+[m[32m   agilidade na tomada de decisão[m
+[32m+[m
+[32m+[m[32m2  OL Papéis[m
+[32m+[m
+[32m+[m[32m   Automação completa de relatórios e implementação de[m
+[32m+[m[32m   análise preditiva para otimização de processos produtivos e[m
+[32m+[m[32m   redução de custos[m
+[32m+[m
+[32m+[m[32m3  Resultados Mensuráveis[m
+[32m+[m
+[32m+[m[32m   Aumento médio de 40% na agilidade decisória e redução de[m
+[32m+[m[32m   até 30% em custos operacionais através de processos[m
+[32m+[m[32m   automatizados[m
+[32m+[m[32mProposta de Valor MB Tech[m
+[32m+[m
+[32m+[m[32mDiagnóstico Inicial              Desenvolvimento Ágil                Suporte Contínuo[m
+[32m+[m[32mGratuito[m
+[32m+[m[32m                                 Processo transparente com entregas  Garantia de que as soluções evoluam[m
+[32m+[m[32mAnálise completa para entender   rápidas, feedback constante e       junto com seu negócio, com[m
+[32m+[m[32mprofundamente suas necessidades  acompanhamento em todas as          atualizações e melhorias constantes[m
+[32m+[m[32mespecíficas e identificar        etapas do projeto[m
+[32m+[m[32moportunidades de melhoria[m
+[32m+[m[32mVamos Transformar Seus[m
+[32m+[m[32mDados em Resultados![m
+[32m+[m
+[32m+[m[32mEntre em Contato                                                   Mylle Braga[m
+[32m+[m
+[32m+[m[32mDescubra como a MB Tech pode impulsionar sua empresa com soluções  Consultora[m
+[32m+[m[32minteligentes em análise de dados                                   E-mail: myllebraga@mbtech.com.br[m
+[32m+[m[32m                                                                   Telefone: (75) 98351-9119[m
+[32m+[m[32m   Site: mbtec.netlify.app[m
+[32m+[m[32m[m
+[1mdiff --git a/arquivos originais de bkp/MB-Tech-Consultoria-em-Tecnologia-e-Analise-de-Dados.pptx b/arquivos originais de bkp/MB-Tech-Consultoria-em-Tecnologia-e-Analise-de-Dados.pptx[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f3479f8[m
+Binary files /dev/null and b/arquivos originais de bkp/MB-Tech-Consultoria-em-Tecnologia-e-Analise-de-Dados.pptx differ
+[1mdiff --git a/arquivos originais de bkp/README.md b/arquivos originais de bkp/README.md[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ff96699[m
+[1m--- /dev/null[m
+[1m+++ b/arquivos originais de bkp/README.md[m	
+[36m@@ -0,0 +1,2 @@[m
+[32m+[m[32m# mbtech[m
+[32m+[m[32mMB Tech[m
+[1mdiff --git a/arquivos originais de bkp/catalogo.html b/arquivos originais de bkp/catalogo.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c48dac0[m
+[1m--- /dev/null[m
+[1m+++ b/arquivos originais de bkp/catalogo.html[m	
+[36m@@ -0,0 +1,887 @@[m
+[32m+[m[32m<!DOCTYPE html>[m
+[32m+[m[32m<html lang="pt-BR">[m
+[32m+[m[32m<head>[m
+[32m+[m[32m    <meta charset="UTF-8">[m
+[32m+[m[32m    <meta name="viewport" content="width=device-width, initial-scale=1.0">[m
+[32m+[m[32m    <title>Catálogo de Serviços - MB Tech</title>[m
+[32m+[m[32m    <link rel="icon" href="img.jpeg" type="image/jpeg">[m
+[32m+[m[32m    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">[m
+[32m+[m[32m    <link rel="preconnect" href="https://fonts.googleapis.com">[m
+[32m+[m[32m    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>[m
+[32m+[m[32m    <link rel="manifest" href="/manifest.json">[m
+[32m+[m[32m    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">[m
+[32m+[m[41m    [m
+[32m+[m[32m    <style>[m
+[32m+[m[32m        /* PALETA: Fundo escuro, Destaque #ff2b2b (Vermelho Vibrante) */[m
+[32m+[m
+[32m+[m[32m        * {[m
+[32m+[m[32m            box-sizing: border-box;[m[41m [m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        body {[m
+[32m+[m[32m            font-family: 'Roboto', 'Inter', sans-serif;[m[41m [m
+[32m+[m[32m            background: linear-gradient(135deg, #0f0f0f, #1a1a1a); /* Fundo Escuro */[m
+[32m+[m[32m            color: #ccc; /* Texto principal em cinza claro */[m
+[32m+[m[32m            margin: 0;[m
+[32m+[m[32m            padding: 0;[m
+[32m+[m[32m            display: flex;[m
+[32m+[m[32m            flex-direction: column;[m
+[32m+[m[32m            min-height: 100vh;[m
+[32m+[m[32m            padding-top: 60px;[m[41m [m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        /* --- CLASSE DE DESFOQUE (Blur) --- */[m
+[32m+[m[32m        .blur-content {[m
+[32m+[m[32m            filter: blur(5px);[m
+[32m+[m[32m            pointer-events: none;[m
+[32m+[m[32m            user-select: none;[m[41m [m
+[32m+[m[32m            transition: filter 0.3s ease-in-out;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        .chat-backdrop {[m
+[32m+[m[32m            display: none;[m
+[32m+[m[32m            position: fixed;[m
+[32m+[m[32m            top: 0;[m
+[32m+[m[32m            left: 0;[m
+[32m+[m[32m            width: 100%;[m
+[32m+[m[32m            height: 100%;[m
+[32m+[m[32m            background-color: rgba(0, 0, 0, 0.6);[m[41m [m
+[32m+[m[32m            z-index: 1010;[m
+[32m+[m[32m        }[m
+[32m+[m[32m        /* --- FIM CLASSE DE DESFOQUE --- */[m
+[32m+[m
+[32m+[m
+[32m+[m[32m        /* --- Cabeçalho --- */[m
+[32m+[m[32m        header {[m
+[32m+[m[32m            position: fixed;[m[41m [m
+[32m+[m[32m            top: 0;[m[41m [m
+[32m+[m[32m            left: 0;[m
+[32m+[m[32m            width: 100%;[m[41m [m
+[32m+[m[32m            z-index: 1000;[m[41m [m
+[32m+[m[32m            background-color: #121212;[m[41m [m
+[32m+[m[32m            color: white;[m
+[32m+[m[32m            padding: 12px 20px;[m[41m [m
+[32m+[m[32m            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);[m[41m [m
+[32m+[m[32m            transition: filter 0.3s ease-in-out;[m[41m [m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        .header-content {[m
+[32m+[m[32m            display: flex;[m
+[32m+[m[32m            align-items: center;[m
+[32m+[m[32m            max-width: 1200px;[m[41m [m
+[32m+[m[32m            margin: 0 auto;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        .header-icon {[m
+[32m+[m[32m            font-size: 24px;[m[41m [m
+[32m+[m[32m            margin-right: 15px;[m
+[32m+[m[32m            color: #ff2b2b;[m[41m [m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        h1 {[m
+[32m+[m[32m            margin: 0;[m
+[32m+[m[32m            font-size: 24px;[m[41m [m
+[32m+[m[32m            font-weight: 700;[m[41m [m
+[32m+[m[32m            white-space: nowrap;[m[41m [m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        .back-link {[m
+[32m+[m[32m            color: #fff;[m
+[32m+[m[32m            background: #ff2b2b;[m
+[32m+[m[32m            padding: 8px 15px;[m
+[32m+[m[32m            border-radius: 8px;[m
+[32m+[m[32m            text-decoration: none;[m
+[32m+[m[32m            font-weight: 600;[m
+[32m+[m[32m            margin-left: auto;[m
+[32m+[m[32m            transition: background 0.3s ease, transform 0.3s ease;[m
+[32m+[m[32m            white-space: nowrap;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        .back-link:hover {[m
+[32m+[m[32m            background-color: #ff1a1a;[m
+[32m+[m[32m            transform: scale(1.02);[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m        main {[m
+[32m+[m[32m            flex: 1;[m
+[32m+[m[32m            padding: 30px 20px;[m[41m [m
+[32m+[m[32m            max-width: 1200px;[m
+[32m+[m[32m            margin: 0 auto;[m[41m [m
+[32m+[m[32m            width: 100%;[m
+[32m+[m[32m            transition: filter 0.3s ease-in-out;[m[41m [m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        /* --- Barra de Pesquisa (Input) --- */[m
+[32m+[m[32m        .search-container {[m
+[32m+[m[32m            display: flex;[m
+[32m+[m[32m            align-items: center;[m
+[32m+[m[32m            border: 2px solid #333;[m[41m [m
+[32m+[m[32m            border-radius: 12px;[m[41m [m
+[32m+[m[32m            padding: 12px 15px;[m[41m [m
+[32m+[m[32m            margin-bottom: 30px;[m[41m [m
+[32m+[m[32m            background-color: #1f1f1f;[m[41m [m
+[32m+[m[32m            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);[m[41m [m
+[32m+[m[32m            transition: box-shadow 0.3s, border-color 0.3s;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        .search-container:focus-within {[m
+[32m+[m[32m            border-color: #ff2b2b;[m[41m [m
+[32m+[m[32m            box-shadow: 0 6px 15px rgba(255, 43, 43, 0.3);[m[41m [m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        #search-input {[m
+[32m+[m[32m            flex-grow: 1;[m
+[32m+[m[32m            border: none;[m
+[32m+[m[32m            padding: 0;[m
+[32m+[m[32m            font-size: 16px;[m
+[32m+[m[32m            outline: none;[m[41m [m
+[32m+[m[32m            background: none;[m
+[32m+[m[32m            color: #fff;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        .search-icon {[m
+[32m+[m[32m            color: #ff2b2b;[m
+[32m+[m[32m            margin-right: 15px;[m
+[32m+[m[32m            font-size: 18px;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        /* --- Tabela --- */[m
+[32m+[m[32m        table {[m
+[32m+[m[32m            width: 100%;[m
+[32m+[m[32m            border-collapse: separate;[m[41m [m
+[32m+[m[32m            border-spacing: 0;[m
+[32m+[m[32m            margin: 0;[m[41m [m
+[32m+[m[32m            overflow: hidden;[m[41m [m
+[32m+[m[32m            border-radius: 8px;[m
+[32m+[m[32m            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);[m[41m [m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        th, td {[m
+[32m+[m[32m            padding: 18px 15px;[m[41m [m
+[32m+[m[32m            text-align: left;[m
+[32m+[

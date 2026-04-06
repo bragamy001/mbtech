@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursos MB Tech - Academia de Tecnologia</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" href="img.jpeg" type="image/jpeg">
+  <link rel="manifest" href="/manifest.json">
+
+  <style>
+    /* Estilos base */
+    body {
+        padding-top: 55px; 
+    }
+
+    /* Estilos para o Modal Pix */
+    .pix-modal-backdrop {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 1500;
+        justify-content: center;
+        align-items: center;
+    }
+    .pix-modal-content {
+        background: #121212;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 25px rgba(255, 43, 43, 0.5);
+        max-width: 450px;
+        width: 90%;
+        text-align: center;
+        position: relative;
+    }
+    .pix-modal-content h3 {
+        color: #ff2b2b;
+        margin-top: 0;
+    }
+    .pix-info {
+        background: #1f1f1f;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 20px 0;
+    }
+    .pix-info p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #ccc;
+    }
+    
+    /* Estilos para o QR Code */
+    #qrcode-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+        padding: 15px;
+        border: 1px dashed #444;
+        border-radius: 8px;
+        background: #0f0f0f;
+    }
+
+    #qrcode-img {
+        max-width: 150px; 
+        border-radius: 5px; 
+        border: 2px solid #ff2b2b; 
+        display: none; /* Inicia escondido */
+    }
+
+    #qrcode-loading {
+        color: #ff2b2b;
+        font-weight: bold;
+    }
+
+    #pix-code-area {
+        resize: none; 
+        width: 100%; 
+        box-sizing: border-box; 
+        padding: 10px; 
+        background: #0f0f0f; 
+        color: #fff; 
+        border: 1px dashed #ff2b2b; 
+        border-radius: 5px; 
+        font-family: monospace; 
+        font-size: 11px; 
+        cursor: text;
+    }
+    .copy-btn {
+        background: #ff2b2b; 
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin-top: 15px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s;
+        font-weight: 600;
+    }
+    .copy-btn:hover {
+        background: #ff1a1a;
+    }
+    .close-pix-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: none;
+        border: none;
+        color: #ff2b2b;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+
+    /* Estilos da Página de Cursos */
+    .courses-hero {
+        text-align: center;
+        padding: 40px 20px 60px;
+        background: #1f1f1f;
+        border-bottom: 2px solid #ff2b2b;
+    }
+
+    .courses-hero h1 {
+        font-size: 38px;
+        color: #ff2b2b;
+        margin-bottom: 10px;
+    }
+
+    .courses-hero p {
+        font-size: 18px;
+        color: #ccc;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .course-section {
+        padding: 40px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .course-section h2 {
+        font-size: 28px;
+        color: #fff;
+        border-left: 5px solid #ff2b2b;
+        padding-left: 15px;
+        margin-bottom: 30px;
+        font-weight: 700;
+    }
+
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+
+    .course-card {
+        background: #121212;
+        border: 1px solid #333;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .course-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(255, 43, 43, 0.4);
+    }
+
+    .card-header {
+        background: #2a2a2a;
+        padding: 15px;
+        color: #ff2b2b;
+        font-weight: 600;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+    }
+
+    .card-header i {
+        margin-right: 8px;
+    }
+
+    .card-content {
+        padding: 20px;
+        flex-grow: 1;
+    }
+
+    .card-content h3 {
+        font-size: 20px;
+        margin-top: 0;
+        margin-bottom: 10px;
+        color: #fff;
+    }
+    
+    .card-content p {
+        color: #ccc;
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+
+    .card-footer {
+        padding: 15px 20px;
+        border-top: 1px solid #333;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .price {
+        font-size: 22px;
+        color: #25D366; 
+        font-weight: 700;
+    }
+    
+    .price small {
+        font-size: 14px;
+        color: #777;
+        text-decoration: line-through;
+        margin-right: 5px;
+        font-weight: 400;
+    }
+
+    .card-link {
+        background: #ff2b2b;
+        color: #fff;
+        padding: 10px 18px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.3s ease;
+        cursor: pointer; 
+    }
+
+    .card-link:hover {
+        background: #ff1a1a;
+    }
+    
+    @media (max-width: 600px) {
+        body {
+           
+            padding-top: 85px; 
+        }
+        
+        .courses-hero h1 {
+            font-size: 30px;
+        }
+
+        .courses-hero {
+            padding: 30px 15px;
+        }
+
+        .course-section {
+            padding: 30px 15px;
+        }
+        
+        .course-section h2 {
+            font-size: 24px;
+        }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">MB Tech</div>
+    <nav>
+        <a href="index.html" class="btn-link">Início</a>
+        <a href="catalogo.html" class="btn-link">Catálogo de Serviços</a>
+        <a href="https://api.whatsapp.com/send?phone=75983519119&text=Ol%C3%A1%2C%20vim%20pelo%20seu%20site%21%20Podemos%20marcar%20um%20momento%20para%20conhecer%20o%20servi%C3%A7o%20da%20MB%20Tech%3F" class="btn-cta">Quero Contratar</a>
+    </nav>
+  </header>
+
+  <section class="courses-hero">
+    <h1>Academia de Tecnologia MB Tech</h1>
+    <p>Domine o mundo dos dados, automação e desenvolvimento com cursos focados no mercado de trabalho.</p>
+  </section>
+
+  <main>
+    <section class="course-section">
+        <h2><i class="fas fa-database"></i> Dados e Business Intelligence</h2>
+        <div class="card-grid">
+            
+            <div class="course-card">
+                <div class="card-header"><i class="fas fa-chart-line"></i> POWER DATA MASTERCLASS</div>
+                <div class="card-content">
+                    <h3>Data Analysis com Power BI</h3>
+                    <p>Do zero ao dashboard profissional. Aprenda a conectar, modelar e visualizar dados complexos.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="price"><small>R$ 497,00</small><span id="price-data-bi">R$ 397,00</span></span>
+                    <button class="card-link" onclick="abrirModalPix(1)">Inscrever-se</button>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="card-header"><i class="fas fa-cogs"></i> ETL & AUTOMAÇÃO</div>
+                <div class="card-content">
+                    <h3>Automação de Relatórios com Python</h3>
+                    <p>Use Python (Pandas e scripts) para limpar dados e automatizar a extração e transformação de rotinas de BI.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="price"><span id="price-python-auto">R$ 549,00</span></span>
+                    <button class="card-link" onclick="abrirModalPix(2)">Inscrever-se</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="course-section">
+        <h2><i class="fab fa-microsoft"></i> Ferramentas Microsoft (Excel, Power Apps)</h2>
+        <div class="card-grid">
+            
+            <div class="course-card">
+                <div class="card-header"><i class="fas fa-file-excel"></i> PRODUTIVIDADE</div>
+                <div class="card-content">
+                    <h3>Excel Avançado para Gestão</h3>
+                    <p>Domine PROCV, Tabelas Dinâmicas, Funções Condicionais e Macros para otimizar qualquer rotina.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="price"><span id="price-excel">R$ 297,00</span></span>
+                    <button class="card-link" onclick="abrirModalPix(3)">Inscrever-se</button>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="card-header"><i class="fas fa-bolt"></i> LOW CODE</div>
+                <div class="card-content">
+                    <h3>Introdução ao Power Apps</h3>
+                    <p>Construa aplicativos de gestão interna e formulários poderosos sem escrever código complexo.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="price"><span id="price-powerapps">R$ 350,00</span></span>
+                    <button class="card-link" onclick="abrirModalPix(4)">Inscrever-se</button>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="course-section">
+        <h2><i class="fab fa-google"></i> Ferramentas Google (Sheets, Looker Studio)</h2>
+        <div class="card-grid">
+            
+            <div class="course-card">
+                <div class="card-header"><i class="fas fa-chart-area"></i> VISUALIZAÇÃO</div>
+                <div class="card-content">
+                    <h3>Dashboards Profissionais com Looker Studio</h3>
+                    <p>Conecte diversas fontes de dados e crie relatórios interativos e online (Google Data Studio).</p>
+                </div>
+                <div class="card-footer">
+                    <span class="price"><span id="price-looker">R$ 310,00</span></span>
+                    <button class="card-link" onclick="abrirModalPix(5)">Inscrever-se</button>
+                </div>
+            </div>
+
+            </div>
+    </section>
+
+    <section class="course-section">
+        <h2><i class="fas fa-code"></i> Curso de Programação</h2>
+        <div class="card-grid">
+            
+            <div class="course-card">
+                <div class="card-header"><i class="fab fa-python"></i> INICIANTE</div>
+                <div class="card-content">
+                    <h3>Python Essencial para Iniciantes</h3>
+                    <p>Aprenda os fundamentos da lógica de programação e a sintaxe básica do Python de forma prática.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="price"><span id="price-python-essencial">R$ 250,00</span></span>
+                    <button class="card-link" onclick="abrirModalPix(6)">Inscrever-se</button>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="course-section">
+        <h2><i class="fas fa-user-tie"></i> Desenvolvimento Particular</h2>
+        <div class="card-grid">
+            
+            <div class="course-card">
+                <div class="card-header"><i class="fas fa-graduation-cap"></i> MENTORIA INDIVIDUAL</div>
+                <div class="card-content">
+                    <h3>Mentoria de Carreira Tech (1-on-1)</h3>
+                    <p>Acompanhamento personalizado para traçar seu plano de carreira e acelerar seu desenvolvimento técnico.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="price"><span id="price-mentoria">R$ 799,00</span></span>
+                    <button class="card-link" onclick="abrirModalPix(7)">Falar com Mentor</button>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MB Tech - Criado por Mylle Braga</p>
+  </footer>
+
+    <div id="pix-modal-backdrop" class="pix-modal-backdrop">
+        <div class="pix-modal-content">
+            <button class="close-pix-btn" onclick="fecharModalPix()">&times;</button>
+            <h3><i class="fas fa-qrcode"></i> Pagamento via Pix</h3>
+            <p>Efetue o pagamento do seu curso (<span id="pix-course-name"></span>) no valor de <strong id="pix-course-value"></strong>.</p>
+            
+            <div class="pix-info">
+                <p><strong>Beneficiário (Temporário):</strong> Mylle Christyann Souza Braga</p>
+                <p><strong>Chave Pix (Temporária):</strong> mcsouza297@gmail.com</p>
+            </div>
+            
+            <div id="qrcode-container">
+                <img id="qrcode-img" src="" alt="QR Code Pix">
+                <p id="qrcode-loading">Gerando QR Code e Código Pix...</p>
+            </div>
+
+            <label for="pix-code-area" style="font-size: 14px; display: block; margin-bottom: 5px;">
+                <i class="fas fa-paste"></i> **COPIE E COLE** o código abaixo no seu aplicativo bancário:
+            </label>
+            <textarea id="pix-code-area" rows="4" readonly style="resize: none; width: 100%; box-sizing: border-box; padding: 10px; background: #0f0f0f; color: #fff; border: 1px dashed #ff2b2b; border-radius: 5px; font-family: monospace; font-size: 11px; cursor: text;"></textarea>
+            
+            <button class="copy-btn" onclick="copiarPixCode()">Copiar Código</button>
+            <p style="margin-top: 20px; font-size: 12px; color: #777;">**ATENÇÃO:** O código e a confirmação de pagamento são gerados pelo nosso servidor. Confirme o beneficiário no seu aplicativo bancário.</p>
+        </div>
+    </div>
+
+    
+    <script>
+        // O objeto COURSES é mantido no frontend apenas para obter o nome/valor
+        const COURSES = {
+            1: { name: "Data Analysis com Power BI", value: 397.00 },
+            2: { name: "Automação de Relatórios com Python", value: 549.00 },
+            3: { name: "Excel Avançado para Gestão", value: 297.00 },
+            4: { name: "Introdução ao Power Apps", value: 350.00 },
+            5: { name: "Dashboards Profissionais com Looker Studio", value: 310.00 },
+            6: { name: "Python Essencial para Iniciantes", value: 250.00 },
+            7: { name: "Mentoria de Carreira Tech (1-on-1)", value: 799.00 }
+        };
+
+
+        async function abrirModalPix(courseId) {
+            const course = COURSES[courseId];
+            if (!course) return;
+
+            const modal = document.getElementById('pix-modal-backdrop');
+            const pixCodeArea = document.getElementById('pix-code-area');
+            const qrcodeImg = document.getElementById('qrcode-img');
+            const qrcodeLoading = document.getElementById('qrcode-loading');
+            
+            // 1. Exibe informações do curso no modal
+            document.getElementById('pix-course-name').innerText = course.name;
+            document.getElementById('pix-course-value').innerText = `R$ ${course.value.toFixed(2).replace('.', ',')}`;
+
+            // Reset e mostra o estado de carregamento
+            qrcodeImg.style.display = 'none';
+            qrcodeImg.src = ''; 
+            qrcodeLoading.innerText = 'Gerando QR Code e Código Pix...';
+            qrcodeLoading.style.display = 'block';
+            pixCodeArea.value = 'Aguarde a comunicação com o servidor...';
+            modal.style.display = 'flex'; // Abre o modal para mostrar o loading
+
+            // 2. CHAMA A API DO SEU NOVO BACKEND
+            try {
+                // ATENÇÃO: Verifique a porta do seu servidor Node.js
+                const response = await fetch('http://localhost:3000/api/pix/create', { 
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        courseId: courseId,
+                        amount: course.value 
+                    })
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json().catch(() => ({ error: 'Erro de Servidor Inesperado' }));
+                    throw new Error(errorData.error || `Erro ${response.status}: Falha ao gerar o Pix.`);
+                }
+                
+                const data = await response.json(); 
+                
+                // 3. ATUALIZA O MODAL COM DADOS DO BACKEND/PSP
+                pixCodeArea.value = data.pixCode || "Código Pix indisponível. Tente novamente.";
+                
+                // GARANTIA DE EXIBIÇÃO DA IMAGEM
+                if (data.qrCodeUrl) {
+                    qrcodeImg.src = data.qrCodeUrl;
+                    qrcodeImg.style.display = 'block'; // Exibe a imagem do QR Code
+                    qrcodeLoading.style.display = 'none'; // Esconde o loading
+                } else {
+                    qrcodeLoading.innerText = 'Código Pix Copia e Cola gerado. QR Code não disponível.';
+                }
+
+            } catch (error) {
+                console.error("Erro no processo de Pix:", error);
+                alert('Não foi possível gerar a cobrança Pix. Verifique seu servidor Node.js e tente novamente. (Detalhes: ' + error.message + ')');
+                fecharModalPix(); // Fecha o modal em caso de erro
+            }
+        }
+
+        function fecharModalPix() {
+            const modal = document.getElementById('pix-modal-backdrop');
+            modal.style.display = 'none';
+        }
+
+        function copiarPixCode() {
+            const pixCodeArea = document.getElementById('pix-code-area');
+            
+            pixCodeArea.select(); 
+            // Para navegadores modernos
+            navigator.clipboard.writeText(pixCodeArea.value).then(() => {
+                 const copyBtn = document.querySelector('.copy-btn');
+                 const originalText = copyBtn.innerText;
+                 copyBtn.innerText = 'Copiado!';
+                 setTimeout(() => {
+                     copyBtn.innerText = originalText;
+                 }, 1500);
+            }).catch(err => {
+                // Fallback para document.execCommand('copy') em navegadores mais antigos
+                document.execCommand('copy');
+                alert('Código Pix copiado! (Método de fallback)');
+            });
+        }
+    </script>
+</body>
+</html>
